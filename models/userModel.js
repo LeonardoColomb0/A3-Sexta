@@ -3,7 +3,10 @@ const db = require('../db');
 function criarUsuario(nome, email, senha, callback) {
   const sql = 'INSERT INTO usuarios (nome, email, senha) VALUES (?, ?, ?)';
   db.run(sql, [nome, email, senha], function(err) {
-    if (err) return callback(err);
+    if (err) {
+      console.error('Erro ao criar usuário:', err); 
+      return callback(err);
+    }
     callback(null, { id: this.lastID, nome, email });
   });
 }

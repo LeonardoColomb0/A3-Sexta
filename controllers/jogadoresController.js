@@ -6,14 +6,14 @@ const arrJogadores = [
     nome: 'Vinicius Júnior',
     posicao: 'Atacante',
     idade: 24,
-    time_id: 1
+    time_id: 101,
   },
   {
     id: 101,
     nome: 'Martin Braithwaite',
     posicao: 'Atacante',
     idade: 33,
-    time_id: 2
+    time_id: 100,
   }
 ];
 

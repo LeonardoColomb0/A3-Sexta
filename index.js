@@ -14,12 +14,12 @@ app.use(express.json());
 
 app.use('/auth', authRoutes);
 
-app.use(checkApiKey);
+//app.use(checkApiKey);
 
 app.use('/jogadores', jogadoresRouter);
 app.use('/campeonatos', campeonatosRouter);
 app.use('/times', timesRouter);
-app.use('/partidas', partidasRouter);
+app.use('/partidas', checkApiKey, partidasRouter);
 
 app.get('/', (req, res) => {
   res.send('API funcionando!');
